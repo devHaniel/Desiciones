@@ -121,6 +121,49 @@ let currentPoint = 0;
 let completed = [];
 let decisions = [];
 
+const STORAGE_KEY = "rutaSegura.progreso";
+
+function guardarProgreso() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({
+      currentPoint,
+      completed,
+      decisions
+    }));
+  } catch (e) {
+    console.warn("No se pudo guardar el progreso:", e);
+  }
+}
+
+function cargarProgreso() {
+  try {
+    const datos = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    if (!datos) return false;
+
+    currentPoint = Number.isInteger(datos.currentPoint)
+      ? Math.min(Math.max(datos.currentPoint, 0), puntosRuta.length - 1)
+      : 0;
+
+    completed = Array.isArray(datos.completed)
+      ? datos.completed.filter(i => Number.isInteger(i) && i >= 0 && i < puntosRuta.length)
+      : [];
+
+    decisions = Array.isArray(datos.decisions) ? datos.decisions : [];
+
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+function borrarProgreso() {
+  try {
+    localStorage.removeItem(STORAGE_KEY);
+  } catch (e) {
+    console.warn("No se pudo borrar el progreso:", e);
+  }
+}
+
 const mapScreen = document.getElementById("mapScreen");
 const sceneScreen = document.getElementById("sceneScreen");
 const summaryScreen = document.getElementById("summaryScreen");
@@ -129,8 +172,11 @@ function showScreen(screen) {
   [mapScreen, sceneScreen, summaryScreen].forEach(s => s.classList.remove("active"));
   screen.classList.add("active");
 
-  if (screen === mapScreen && map) {
-    setTimeout(() => map.invalidateSize(), 200);
+  if (screen === mapScreen) {
+    updateProgress();
+    if (map) {
+      setTimeout(() => map.invalidateSize(), 200);
+    }
   }
 }
 
@@ -247,6 +293,7 @@ function loadScene(index) {
   testImage.src = imagePath;
 
   resetChoices();
+  guardarProgreso();
   showScreen(sceneScreen);
 }
 
@@ -292,6 +339,7 @@ function answer(choice) {
   }
 
   updateProgress();
+  guardarProgreso();
 
   const nextButton = document.getElementById("nextPointBtn");
   nextButton.classList.remove("hidden");
@@ -359,7 +407,8 @@ function openPoint(index) {
 window.openPoint = openPoint;
 
 document.getElementById("startBtn").addEventListener("click", () => {
-  loadScene(0);
+  const pendiente = puntosRuta.findIndex((_, i) => !completed.includes(i));
+  loadScene(pendiente === -1 ? 0 : pendiente);
 });
 
 document.getElementById("backMapBtn").addEventListener("click", () => {
@@ -416,10 +465,19 @@ document.getElementById("restartBtn").addEventListener("click", () => {
   currentPoint = 0;
   completed = [];
   decisions = [];
+  borrarProgreso();
   updateProgress();
   renderMarkers();
   showScreen(mapScreen);
 });
 
 initMap();
+cargarProgreso();
+renderMarkers();
 updateProgress();
+
+const primerPendiente = puntosRuta.findIndex((_, i) => !completed.includes(i));
+if (primerPendiente !== -1) {
+  currentPoint = primerPendiente;
+  renderMarkers();
+}
