@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruta Segura | Conoce tu perfil</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link rel="stylesheet" href="perfil.css">
+  <link rel="stylesheet" href="navbar.css">
+</head>
+<body>
+
+  <main class="perfil-page">
+
+    <!-- ===== Lado derecho: panel principal ===== -->
+    <section class="panel">
+
+      <div class="tarjeta">
+
+        <!-- Paso -->
+        <div class="encabezado">
+          <div class="paso-circulo">2</div>
+          <span class="paso-texto">Perfil del usuario</span>
+        </div>
+
+        <!-- Título -->
+        <h1 class="titulo">Conoce tu perfil</h1>
+        <div class="linea-azul"></div>
+
+        <!-- Descripción -->
+        <p class="descripcion">
+          Cuéntanos un poco sobre ti para personalizar tu experiencia.
+          Así, el recorrido y las recomendaciones se ajustan a tu realidad.
+        </p>
+
+        <!-- Tarjeta del usuario con chips -->
+        <div class="usuario-card">
+          <div class="avatar">🛵</div>
+
+          <div class="usuario-info">
+            <strong>Juan, 22 años</strong>
+            <span>Repartidor y estudiante</span>
+          </div>
+
+          <div class="chips">
+            <span class="chip"><i class="fa-solid fa-motorcycle"></i> Repartidor</span>
+            <span class="chip"><i class="fa-solid fa-graduation-cap"></i> Estudiante</span>
+            <span class="chip"><i class="fa-solid fa-helmet-safety"></i> Usa moto</span>
+            <span class="chip"><i class="fa-solid fa-mobile-screen"></i> Smartphone</span>
+            <span class="chip"><i class="fa-solid fa-square-check"></i> Responsable</span>
+            <span class="chip"><i class="fa-solid fa-book-open"></i> Aprende siempre</span>
+          </div>
+        </div>
+
+        <!-- Tarjeta informativa -->
+        <div class="info-card">
+          <div class="info-icono">
+            <i class="fa-solid fa-bullseye"></i>
+          </div>
+
+          <div class="info-texto">
+            <strong>Tu recorrido se personaliza según tu perfil</strong>
+            <p>
+              Verás contenidos, ejemplos y consejos pensados
+              para repartidores y estudiantes que usan moto en la ciudad.
+            </p>
+          </div>
+
+          <div class="miniilustracion" aria-label="Mapa con pin y casco">
+            <span class="mini-pin">📍</span>
+            <span class="mini-casco">🪖</span>
+          </div>
+        </div>
+
+        <!-- Botones inferiores -->
+        <div class="botones">
+          <button class="btn-volver" onclick="location.href='index.html'">
+            ← Volver
+          </button>
+
+          <button class="btn-continuar" onclick="location.href='index.html'">
+            <span>Continuar</span>
+            <span class="btn-circulo">
+              <i class="fa-solid fa-arrow-right"></i>
+            </span>
+          </button>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ===== Barra inferior global ===== -->
+  <nav class="bottom-nav">
+    <a class="nav-item" href="index.html">⌂ <span>MENÚ PRINCIPAL</span></a>
+    <a class="nav-item active" href="perfil.html">⌁ <span>MI PERFIL</span></a>
+    <a class="nav-item" href="educativo.html">ⓘ <span>INFORMACIÓN</span></a>
+  </nav>
+
+</body>
+</html>

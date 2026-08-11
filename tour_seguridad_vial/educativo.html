@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruta Segura | Contenido educativo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link rel="stylesheet" href="educativo.css">
+  <link rel="stylesheet" href="navbar.css">
+</head>
+<body>
+
+  <main class="edu-page">
+
+    <!-- Fondo desenfocado tipo museo -->
+    <div class="bg-foto">
+      <div class="bg-haz haz-1"></div>
+      <div class="bg-haz haz-2"></div>
+      <div class="bg-techo"></div>
+      <div class="bg-columnas">
+        <div class="columna" style="height:78%"></div>
+        <div class="columna" style="height:94%"></div>
+        <div class="columna" style="height:100%"></div>
+        <div class="columna" style="height:88%"></div>
+        <div class="columna" style="height:96%"></div>
+      </div>
+      <div class="bg-overlay"></div>
+    </div>
+
+    <!-- Panel principal -->
+    <section class="panel-educativo">
+
+      <!-- Encabezado -->
+      <header class="edu-header">
+        <div class="edu-titulo-bloque">
+          <div class="paso-circulo">5</div>
+          <div>
+            <h1>Contenido educativo</h1>
+            <p>Accede a diferentes tipos de contenido para informarte y aprender.</p>
+          </div>
+        </div>
+        <button class="btn-cerrar" aria-label="Cerrar" title="Cerrar"
+                onclick="location.href='index.html'">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </header>
+
+      <!-- Layout interno -->
+      <div class="edu-layout">
+
+        <!-- Menú lateral -->
+        <aside class="menu-lateral">
+
+          <button class="menu-card active" data-panel="fichas">
+            <span class="menu-icono"><i class="fa-solid fa-file-lines"></i></span>
+            <span class="menu-texto">
+              <strong>Fichas informativas</strong>
+              <small>Guías y artículos sobre seguridad vial.</small>
+            </span>
+          </button>
+
+          <button class="menu-card" data-panel="capsulas">
+            <span class="menu-icono"><i class="fa-solid fa-video"></i></span>
+            <span class="menu-texto">
+              <strong>Cápsulas / Mini videos</strong>
+              <small>Videos cortos con consejos y buenas prácticas.</small>
+            </span>
+          </button>
+
+          <button class="menu-card" data-panel="galeria">
+            <span class="menu-icono"><i class="fa-solid fa-image"></i></span>
+            <span class="menu-texto">
+              <strong>Galerías de imágenes</strong>
+              <small>Fotos y gráficos para aprender visualmente.</small>
+            </span>
+          </button>
+
+          <button class="menu-card" data-panel="recomendaciones">
+            <span class="menu-icono"><i class="fa-solid fa-shield-halved"></i></span>
+            <span class="menu-texto">
+              <strong>Recomendaciones de prevención</strong>
+              <small>Buenas prácticas para cuidarte en la vía.</small>
+            </span>
+          </button>
+
+        </aside>
+
+        <!-- Contenido derecho con pestañas -->
+        <div class="contenido">
+
+          <!-- Pestaña: Fichas informativas -->
+          <section class="tab-panel active" data-panel="fichas">
+            <div class="panel-head">
+              <h2>Fichas informativas</h2>
+              <p>Guías y artículos con información clave para prevenir accidentes.</p>
+            </div>
+
+            <div class="ficha-card">
+              <div class="ficha-cabecera">
+                <span class="etiqueta">FICHA · EQUIPO DE PROTECCIÓN</span>
+                <h3>Casco y equipamiento adecuado</h3>
+                <p>
+                  Conocé cómo el uso correcto del equipo reduce el riesgo de
+                  lesiones y te hace más visible en la vía.
+                </p>
+              </div>
+
+              <div class="ficha-secciones">
+                <section class="ficha-seccion">
+                  <span class="seccion-num">01</span>
+                  <span class="seccion-icono"><i class="fa-solid fa-helmet-safety"></i></span>
+                  <div class="seccion-texto">
+                    <strong>Usá siempre el casco</strong>
+                    <p>
+                      El casco debe estar certificado, ajustarse sin holguras y
+                      cubrir por completo la cabeza. Abrochalo siempre, incluso
+                      en trayectos cortos.
+                    </p>
+                  </div>
+                </section>
+
+                <section class="ficha-seccion">
+                  <span class="seccion-num">02</span>
+                  <span class="seccion-icono"><i class="fa-solid fa-hand-fist"></i></span>
+                  <div class="seccion-texto">
+                    <strong>Protegé tu cuerpo</strong>
+                    <p>
+                      Guantes, rodilleras, chamarra con protecciones y calzado
+                      resistente disminuyen las lesiones en caídas y colisiones.
+                    </p>
+                  </div>
+                </section>
+
+                <section class="ficha-seccion">
+                  <span class="seccion-num">03</span>
+                  <span class="seccion-icono"><i class="fa-solid fa-eye"></i></span>
+                  <div class="seccion-texto">
+                    <strong>Hacete visible</strong>
+                    <p>
+                      Usá chaleco reflectivo y elementos de alta visibilidad
+                      para que los demás conductores te vean de día y de noche.
+                    </p>
+                  </div>
+                </section>
+
+                <section class="ficha-seccion">
+                  <span class="seccion-num">04</span>
+                  <span class="seccion-icono"><i class="fa-solid fa-gears"></i></span>
+                  <div class="seccion-texto">
+                    <strong>Mantenimiento preventivo</strong>
+                    <p>
+                      Revisá frenos, llantas, luces y cadena antes de cada
+                      recorrido. Una moto en buen estado es una moto más segura.
+                    </p>
+                  </div>
+                </section>
+              </div>
+            </div>
+
+            <div class="ficha-card">
+              <div class="ficha-cabecera">
+                <span class="etiqueta">FICHA · REGLAS BÁSICAS</span>
+                <h3>10 reglas básicas para motociclistas</h3>
+                <p>Un repaso simple para conducir con seguridad en la ciudad.</p>
+              </div>
+
+              <ol class="reglas-lista">
+                <li>Respetá el límite de velocidad</li>
+                <li>Usá casco y equipo de protección</li>
+                <li>Mantené la distancia de seguridad</li>
+                <li>Evitá permanecer en puntos ciegos</li>
+                <li>Señalizá tus giros con tiempo</li>
+                <li>No uses el celular al conducir</li>
+                <li>Anticipate en las intersecciones</li>
+                <li>Reducí la velocidad bajo lluvia</li>
+                <li>Revisá tu moto antes de salir</li>
+                <li>Conducí con precaución y paciencia</li>
+              </ol>
+            </div>
+          </section>
+
+          <!-- Pestaña: Cápsulas / Mini videos -->
+          <section class="tab-panel" data-panel="capsulas">
+            <div class="panel-head">
+              <h2>Cápsulas / Mini videos</h2>
+              <p>Videos cortos con consejos y buenas prácticas para la vía.</p>
+            </div>
+
+            <div class="capsulas-lista">
+
+              <section class="capsula-item">
+                <h3>PROGRAMA DE SEGURIDAD VIAL: VELOCIDAD SEGURA</h3>
+                <p>Analizá cómo la velocidad influye en tu tiempo de reacción y en la distancia de frenado.</p>
+                <div class="video-frame">
+                  <iframe class="video-embed" src="https://www.youtube.com/embed/AyoFJSXJNys" title="Programa de seguridad vial: velocidad segura" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+              </section>
+
+              <section class="capsula-item">
+                <h3>Puntos ciegos: salí de la zona invisible</h3>
+                <p>Descubrí cómo evitar permanecer junto a buses y camiones en sus ángulos muertos.</p>
+                <div class="video-frame">
+                  <iframe class="video-embed" src="https://www.youtube.com/embed/vgC_DdI23YY" title="Puntos ciegos: 1a parte" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+              </section>
+
+              <section class="capsula-item">
+                <h3>Manejo bajo lluvia: prevé y frená a tiempo</h3>
+                <p>Consejos para compensar la menor adherencia y visibilidad en calles mojadas.</p>
+                <div class="video-frame">
+                  <iframe class="video-embed" src="https://www.youtube.com/embed/9m9ifQd3i3g" title="Manejo bajo lluvia: prevé y frená a tiempo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+              </section>
+
+              <section class="capsula-item">
+                <h3>Equipo de protección: qué no puede faltar</h3>
+                <p>Recorrido visual por el equipamiento que reduce riesgos en cada salida.</p>
+                <div class="video-frame">
+                  <iframe class="video-embed" src="https://www.youtube.com/embed/iabvhJhIm_c" title="Equipo de protección: qué no puede faltar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+              </section>
+
+            </div>
+          </section>
+
+          <!-- Pestaña: Galerías de imágenes -->
+          <section class="tab-panel" data-panel="galeria">
+            <div class="panel-head">
+              <h2>Galerías de imágenes</h2>
+              <p>Fotos y gráficos para aprender de forma visual.</p>
+            </div>
+
+            <div class="galeria-grid">
+              <figure class="galeria-item">
+                <div class="galeria-media ilus-senal">
+                  <span class="media-senal"><span class="senal-invertida">CEDE<br>EL PASO</span></span>
+                </div>
+                <figcaption>
+                  <span class="etiqueta">GALERÍA</span>
+                  <strong>Señales de tránsito</strong>
+                </figcaption>
+              </figure>
+
+              <figure class="galeria-item">
+                <div class="galeria-media ilus-casco">
+                  <span class="media-emoji">🪖</span>
+                </div>
+                <figcaption>
+                  <span class="etiqueta">GALERÍA</span>
+                  <strong>Equipo de protección</strong>
+                </figcaption>
+              </figure>
+
+              <figure class="galeria-item">
+                <div class="galeria-media ilus-conduccion">
+                  <span class="media-emoji">🏍️</span>
+                </div>
+                <figcaption>
+                  <span class="etiqueta">GALERÍA</span>
+                  <strong>Conducción en la ciudad</strong>
+                </figcaption>
+              </figure>
+
+              <figure class="galeria-item">
+                <div class="galeria-media ilus-chaleco">
+                  <span class="media-emoji">🦺</span>
+                </div>
+                <figcaption>
+                  <span class="etiqueta">GALERÍA</span>
+                  <strong>Visibilidad y chalecos</strong>
+                </figcaption>
+              </figure>
+
+              <figure class="galeria-item">
+                <div class="galeria-media ilus-motor">
+                  <span class="media-emoji">⚙️</span>
+                </div>
+                <figcaption>
+                  <span class="etiqueta">GALERÍA</span>
+                  <strong>Mantenimiento de tu moto</strong>
+                </figcaption>
+              </figure>
+
+              <figure class="galeria-item">
+                <div class="galeria-media ilus-infografia">
+                  <span class="media-emoji">📊</span>
+                </div>
+                <figcaption>
+                  <span class="etiqueta">GALERÍA</span>
+                  <strong>Infografías de reglas</strong>
+                </figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <!-- Pestaña: Recomendaciones de prevención -->
+          <section class="tab-panel" data-panel="recomendaciones">
+            <div class="panel-head">
+              <h2>Recomendaciones de prevención</h2>
+              <p>Buenas prácticas para cuidarte a vos y a los demás en la vía.</p>
+            </div>
+
+            <div class="tips-grid">
+              <article class="tip-card">
+                <span class="tip-icono"><i class="fa-solid fa-shield-halved"></i></span>
+                <div>
+                  <strong>Revisá tu moto antes de salir</strong>
+                  <p>Frenos, llantas, luces y cadena en orden reducen los riesgos.</p>
+                </div>
+              </article>
+
+              <article class="tip-card">
+                <span class="tip-icono"><i class="fa-solid fa-helmet-safety"></i></span>
+                <div>
+                  <strong>Vestite para el viaje</strong>
+                  <p>Casco, guantes y protecciones adecuadas en cada recorrido.</p>
+                </div>
+              </article>
+
+              <article class="tip-card">
+                <span class="tip-icono"><i class="fa-solid fa-eye"></i></span>
+                <div>
+                  <strong>Hacete visible</strong>
+                  <p>Chaleco reflectivo y luces encendidas, de día y de noche.</p>
+                </div>
+              </article>
+
+              <article class="tip-card">
+                <span class="tip-icono"><i class="fa-solid fa-triangle-exclamation"></i></span>
+                <div>
+                  <strong>Respetá las señales</strong>
+                  <p>Semáforos, ceda el paso y cruces peatonales requieren anticipación.</p>
+                </div>
+              </article>
+
+              <article class="tip-card">
+                <span class="tip-icono"><i class="fa-solid fa-mobile-screen-button"></i></span>
+                <div>
+                  <strong>Sin distracciones</strong>
+                  <p>Las notificaciones esperan; tu atención pertenece a la vía.</p>
+                </div>
+              </article>
+
+              <article class="tip-card">
+                <span class="tip-icono"><i class="fa-solid fa-cloud-rain"></i></span>
+                <div>
+                  <strong>Adaptate al clima</strong>
+                  <p>Con lluvia, reducí la velocidad y aumentá la distancia de seguridad.</p>
+                </div>
+              </article>
+            </div>
+          </section>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ===== Barra inferior global ===== -->
+  <nav class="bottom-nav">
+    <a class="nav-item" href="index.html">⌂ <span>MENÚ PRINCIPAL</span></a>
+    <a class="nav-item" href="perfil.html">⌁ <span>MI PERFIL</span></a>
+    <a class="nav-item active" href="educativo.html">ⓘ <span>INFORMACIÓN</span></a>
+  </nav>
+
+  <script src="educativo.js"></script>
+</body>
+</html>

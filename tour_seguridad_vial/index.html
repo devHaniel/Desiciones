@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruta Segura | Tour Virtual</title>
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIINfQ3fWv9lL9s4V9M6kN7pG3G8p1G2z9k="
+    crossorigin=""
+  />
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="navbar.css">
+</head>
+<body>
+
+  <main class="app">
+
+    <section id="mapScreen" class="screen active">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-icon">🏍️</span>
+          <div>
+            <strong>RUTA SEGURA</strong>
+            <small>Tour virtual de seguridad vial</small>
+          </div>
+        </div>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Menú">☰</button>
+      </header>
+
+      <div class="map-layout">
+        <aside class="info-panel">
+          <div class="eyebrow">RECORRIDO INTERACTIVO</div>
+          <h1>Avanzá por la ruta y aprendé.</h1>
+          <p>
+            Acompañá a Juan, un joven repartidor y estudiante,
+            durante un recorrido por Tegucigalpa y Comayagüela.
+          </p>
+
+          <div class="progress-box">
+            <div class="progress-head">
+              <span>Progreso</span>
+              <strong id="progressText">0 / 6</strong>
+            </div>
+            <div class="progress-track">
+              <div id="progressBar"></div>
+            </div>
+          </div>
+
+          <div class="legend">
+            <div><span class="dot available"></span> Punto disponible</div>
+            <div><span class="dot completed"></span> Punto completado</div>
+            <div><span class="dot locked"></span> Próximo punto</div>
+          </div>
+
+          <button class="primary-btn" id="startBtn">
+            Comenzar recorrido <span>→</span>
+          </button>
+
+          <div class="menu-acciones">
+            <a class="menu-link-btn" href="perfil.html">
+              👤 <span>Ver el perfil</span>
+            </a>
+            <a class="menu-link-btn" href="educativo.html">
+              ⓘ <span>Información</span>
+            </a>
+          </div>
+        </aside>
+
+        <div class="map-card">
+          <div id="map"></div>
+
+          <div class="map-floating-title">
+            <span>📍</span>
+            Tegucigalpa y Comayagüela
+          </div>
+
+          <button class="map-control" id="resetMapBtn" title="Restablecer mapa">⌖</button>
+        </div>
+      </div>
+
+      <nav class="bottom-nav">
+        <a class="nav-item active" href="index.html">⌂ <span>MENÚ PRINCIPAL</span></a>
+        <a class="nav-item" href="perfil.html">⌁ <span>MI PERFIL</span></a>
+        <a class="nav-item" href="educativo.html">ⓘ <span>INFORMACIÓN</span></a>
+      </nav>
+    </section>
+
+    <section id="sceneScreen" class="screen">
+      <header class="topbar scene-topbar">
+        <div class="brand">
+          <span class="brand-icon">🏍️</span>
+          <div>
+            <strong>RUTA SEGURA</strong>
+            <small id="sceneLocation">Punto 1 · Intersección</small>
+          </div>
+        </div>
+        <button class="menu-btn" id="backMapBtn" title="Volver al mapa">⌕</button>
+      </header>
+
+      <div class="scene-wrap">
+
+        <div class="scene-image" id="sceneImage">
+          <div class="scene-placeholder">
+            <div class="placeholder-bike">🏍️</div>
+            <h2>ESCENA DE CONDUCCIÓN</h2>
+            <p>
+              Colocá aquí la imagen de la escena correspondiente.
+              <br>
+              Archivo esperado: <b>assets/escena1.jpg</b>
+            </p>
+          </div>
+
+          <button class="hotspot" id="hotspotMain" title="Ver situación">?</button>
+          <button class="hotspot small hotspot-secondary" id="hotspotInfo" title="Información">i</button>
+
+          <div class="scene-hint">
+            <span>●</span> Punto interactivo disponible
+          </div>
+        </div>
+
+        <aside class="scene-panel" id="scenePanel">
+          <div class="panel-number" id="panelNumber">1</div>
+          <div class="eyebrow" id="panelEyebrow">SITUACIÓN DE RIESGO</div>
+          <h2 id="panelTitle">Intersección con tráfico</h2>
+          <p id="panelDescription">
+            Juan se aproxima a una intersección. Debe observar el semáforo,
+            reducir la velocidad y anticiparse a los demás vehículos.
+          </p>
+
+          <div class="question-box">
+            <strong id="questionTitle">¿Qué debería hacer Juan?</strong>
+
+            <button class="choice" data-choice="safe">
+              <span>A</span>
+              <span id="choiceA">Reducir la velocidad y observar antes de avanzar.</span>
+            </button>
+
+            <button class="choice" data-choice="danger">
+              <span>B</span>
+              <span id="choiceB">Acelerar para pasar rápidamente.</span>
+            </button>
+          </div>
+
+          <div id="feedback" class="feedback hidden"></div>
+
+          <button class="primary-btn hidden" id="nextPointBtn">
+            Continuar al siguiente punto <span>→</span>
+          </button>
+        </aside>
+      </div>
+
+      <nav class="bottom-nav">
+        <button class="nav-item" id="sceneMapBtn">◈ <span>MAPA</span></button>
+        <button class="nav-item active">⚠ <span>SITUACIÓN</span></button>
+        <button class="nav-item">ⓘ <span>INFORMACIÓN</span></button>
+      </nav>
+    </section>
+
+    <section id="summaryScreen" class="screen">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-icon">🏍️</span>
+          <div>
+            <strong>RUTA SEGURA</strong>
+            <small>Resultados del recorrido</small>
+          </div>
+        </div>
+      </header>
+
+      <div class="summary">
+        <div class="summary-card">
+          <div class="eyebrow">RECORRIDO FINALIZADO</div>
+          <h1>¡Buen trabajo!</h1>
+          <p>Estas fueron las decisiones que tomaste durante el recorrido.</p>
+
+          <div class="score" id="score">0 / 6</div>
+          <p id="scoreMessage"></p>
+
+          <div id="decisionList" class="decision-list"></div>
+
+          <button class="primary-btn" id="restartBtn">
+            Repetir recorrido <span>↻</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="modal hidden" id="infoModal">
+    <div class="modal-box">
+      <button class="modal-close" id="closeModal">×</button>
+      <div class="eyebrow">SEGURIDAD VIAL</div>
+      <h2 id="modalTitle">Consejo</h2>
+      <p id="modalText"></p>
+    </div>
+  </div>
+
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin="">
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
