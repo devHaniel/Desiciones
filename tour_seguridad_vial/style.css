@@ -641,6 +641,13 @@ button {
   .app {
     min-height: 720px;
     height: auto;
+    overflow: visible;
+  }
+
+  /* En móvil las pantallas fluyen en el documento para permitir scroll. */
+  .screen {
+    position: relative;
+    inset: auto;
   }
 
   .map-layout,
@@ -658,6 +665,10 @@ button {
   }
 
   .map-card {
+    min-height: 430px;
+  }
+
+  .map-embed {
     min-height: 430px;
   }
 
@@ -681,13 +692,6 @@ button {
   #sceneScreen.active {
     overflow-y: auto;
   }
-
-  #map {
-  width: 100%;
-  height: 100%;
-  background: #f0f0f0; 
-
-}
 
 }
 

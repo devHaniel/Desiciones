@@ -461,16 +461,6 @@ document.getElementById("resetMapBtn").addEventListener("click", () => {
   map.fitBounds(routeLine.getBounds(), { padding: [40, 40] });
 });
 
-document.getElementById("restartBtn").addEventListener("click", () => {
-  currentPoint = 0;
-  completed = [];
-  decisions = [];
-  borrarProgreso();
-  updateProgress();
-  renderMarkers();
-  showScreen(mapScreen);
-});
-
 initMap();
 cargarProgreso();
 renderMarkers();
