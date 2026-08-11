@@ -1,0 +1,7 @@
+[build]
+  publish = "tour_seguridad_vial"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
